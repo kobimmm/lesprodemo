@@ -1,0 +1,86 @@
+/* CSS for checkBoxes */
+.checkbox label {
+    position: relative;
+    padding-left: 5px;
+}
+.checkbox.checkbox-inline{
+    display:flex;
+}
+.checkbox-inline+.checkbox-inline{
+    margin-top: 10px;
+}
+.checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    margin-left: -20px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    background-color: #fff;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+  }
+.checkbox label::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: -19px;
+    top: 1px;
+    width: 14px;
+    height: 14px;
+}
+.checkbox input[type="checkbox"] {
+    opacity: 0;
+    z-index: 1;
+}
+.checkbox input[type="checkbox"]:focus + label::before {
+  outline: 0;
+}
+.checkbox input[type="checkbox"] + label::after {
+    background:none;
+}
+.checkbox input[type="checkbox"]:checked + label::after {
+    /* escaped for IE */
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23237bc2' stroke='none'%3E%3Cpath d='M18.7 4.6c-0.4-0.4-1-0.4-1.4 0l-8.8 8.8-4.8-4.6c-0.4-0.4-1-0.4-1.4 0s-0.4 1 0 1.4l5.6 5.2c0.2 0.2 0.4 0.3 0.7 0.3s0.5-0.1 0.7-0.3l9.4-9.4c0.4-0.4 0.4-1 0-1.4z'%3E%3C/path%3E%3C/svg%3E") no-repeat;
+}
+.checkbox input[type="checkbox"]:disabled + label {
+    opacity: 0.65;
+    cursor:default;
+}
+.checkbox input[type="checkbox"]:disabled {
+    cursor: default;
+}
+.checkbox input[type="checkbox"]:disabled + label::before {
+    background-color: #eeeeee;
+    cursor: default;
+}
+.checkbox input[type="checkbox"]:checked:disabled + label::after {
+    color: #C7D3D9;
+}
+/* view state */
+.input-checkbox-view .selected{
+    font-family: 'Lato', sans-serif;
+    margin-right:10px;
+}
+.input-checkbox-view .not-selected{
+    margin-left:18px;
+}
+ 
+.input-checkbox-view {
+    list-style: none;
+    padding: 0;
+    margin:0;
+}
+.input-checkbox-view li.selected:before {
+    content: "";
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    /* escaped for IE */
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23237bc2' stroke='none'%3E%3Cpath d='M18.7 4.6c-0.4-0.4-1-0.4-1.4 0l-8.8 8.8-4.8-4.6c-0.4-0.4-1-0.4-1.4 0s-0.4 1 0 1.4l5.6 5.2c0.2 0.2 0.4 0.3 0.7 0.3s0.5-0.1 0.7-0.3l9.4-9.4c0.4-0.4 0.4-1 0-1.4z'%3E%3C/path%3E%3C/svg%3E") no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 4px;
+}

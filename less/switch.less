@@ -1,0 +1,186 @@
+/* The switch - the box around the slider */
+.b-switch {
+    position: relative;
+    display: inline-block;
+    font-family: 'Lato', sans-serif;
+    color:#fff;
+    font-size:12px;
+}
+
+/* Hide default HTML checkbox */
+.b-switch input {display:none;}
+
+/* The slider */
+.b-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #b3b3b3;
+    transition: .1s;
+}
+.b-switch input:checked + .slider {
+    background-color: #007cbe;
+}
+.b-switch input:focus + .slider {
+    box-shadow: 0 0 1px #007cbe;
+}
+.b-switch.big input:checked + .slider:before {
+    transform: translateX(30px);
+}
+.b-switch.medium input:checked + .slider:before {
+    transform: translateX(15px);
+}
+/* Rounded sliders */
+.b-switch .slider.round,
+.b-switch .slider.round:before{
+    border-radius: 15px;
+}
+
+/* big =============================================================  */
+.b-switch.big.with-text-in{
+    width:60px;
+    height: 30px;
+}
+.b-switch.big .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 2px;
+    top: 2px;
+    background-color: #fff;
+    transition: .3s;
+}
+
+/* with text */
+/* On text*/
+.b-switch.big.with-text-in input:checked + .slider:after {
+    position: absolute;
+    content: "On";
+    height: 22px;
+    width: 22px;
+    left: 8px;
+    top: 6px;
+    opacity:1;
+    transition: .3s;
+    font-size:13px;
+    }
+/* Off text*/
+.b-switch.big.with-text-in input + .slider:after {
+    position: absolute;
+    content: "Off";
+    right: 8px;
+    top: 6px;
+    opacity:1;
+    transition: .3s;
+    font-size:13px;
+}
+
+/* big =============================================================  */
+.b-switch.medium{
+    width:35px;
+    height:20px;
+}
+.b-switch.medium .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 1px;
+    top: 1px;
+    background-color: #fff;
+    transition: .2s;
+}
+.b-switch.small input:checked + .slider:before {
+    transform: translateX(10px);
+}
+
+/* small =============================================================  */
+.b-switch.small{
+    width: 26px;
+    height: 16px;
+}
+.b-switch.small .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 1px;
+    top: 1px;
+    background-color: #fff;
+    transition: .2s;
+}
+.b-switch.small input:checked + .slider:before {
+    transform: translateX(10px);
+}
+
+/* "On" text*/
+.b-switch.small.with-text-out input:checked + .slider:after,
+.b-switch.small.with-text-out input + .slider:after{
+    position: absolute;
+    top: 0px;
+    opacity:1;
+    transition: .2s;
+    color:#212c37;
+}
+.b-switch.small.with-text-out input:checked + .slider:after {
+    content: "On";
+    color:#697782;
+}
+/* "Off" text*/
+.b-switch.small.with-text-out input + .slider:after {
+    content: "Off";
+    right: 30px;
+    color:#697782;
+}
+
+/* disabled */
+.b-switch.disabled .slider{
+    cursor:default;
+}
+.b-switch.disabled .slider.round{
+    background-color: #f5f8fa;
+    border:solid 1px #dde4e9;
+    color:#9b9ea0;
+}
+.b-switch.disabled .slider.round:before{
+    background-color: #C7D3D9;
+    height: 14px;
+    width: 14px;
+    left: 0px;
+    top: 0px;
+    border: solid 1px #C7D3D9;
+}
+.b-switch.big.disabled{
+    color:#999;
+}
+.b-switch.big.disabled .slider.round:before{
+    background-color: #C7D3D9;
+    border:solid 1px #C7D3D9;
+    height: 26px;
+    width: 26px;
+    left: 1px;
+    top: 1px;
+}
+.b-switch.big.with-text-in.disabled .slider.round:after,
+.b-switch.big.with-text-in.disabled .slider.round:after{
+    top: 5px;
+    color:#C7D3D9;
+}
+.b-switch.medium.disabled .slider.round:before{
+    background-color: #C7D3D9;
+    border:solid 1px #C7D3D9;
+    height: 18px;
+    width: 18px;
+    left: 0;
+    top: 0;
+}
+
+/* view mode */
+.b-switch.view-mode{
+    color:#404040;
+    font-size: 14px;
+}

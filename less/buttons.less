@@ -1,0 +1,94 @@
+/* primary button */
+/* polyphil first */
+.btn{
+    border:none;
+    outline:none;
+}
+.btn {
+	font-family: 'Lato', sans-serif;
+	font-size:16px;
+	border-radius:3px;
+	text-decoration: none;
+	box-sizing: border-box;
+    min-width:90px;
+    height:36px;
+    &.fr{
+        float:right;
+    }
+    &.btn-primary {
+        color: #fff;
+        background-color: @pro-bg-color-btn-primary;
+        border-color: #007cbe;
+        box-shadow: 0px 2px 0px 0px #EF7F88;
+        &:hover, .btn-primary:focus:hover:not(:active){
+            background-color: #F24A58;
+            border-color: #F24A58;
+            box-shadow: 0px 2px 0px 0px #D8979C;
+        }
+        &:focus{
+            background-color: #ED2939;
+            border-color: #ED2939;
+            box-shadow: 0px 2px 0px 0px #F72C3D;
+        }
+        &.btn-lg{
+            padding: 8px 25px 6px;
+            line-height: 22px;
+            margin: 0 10px;
+            height: 40px;
+            font-size:16px;
+        }
+        &.btn-sm{
+            padding: 8px 25px 6px;
+            font-size:14px;
+            line-height: 14px;
+            margin: 0 6px;
+        }
+        &.btn-xs{
+            padding: 4px 15px 2px;
+            font-size: 11px;
+            line-height: 10px;
+            margin: 0 4px;
+        }
+    }
+    /* secondary button */
+    &.btn-secondary {
+        color:#6b7984;
+        background-color: #fff;
+        border-color: @pro-border-color-theme1;
+        box-shadow: 0px 2px 0px 0px @pro-border-color-theme1;
+        &:hover, .btn-secondary:hover:focus:not(:active){
+            background-color: #fff;
+            border-color: #6b8ea8;
+            box-shadow: 0px 2px 0px 0px #6b8ea8;
+        }
+        &:focus{
+            background-color: #fff;
+            border-color: @pro-border-color-theme1;
+            box-shadow: 0px 2px 0px 0px @pro-border-color-theme1;
+        }
+        &:active{
+            background-color: #ecf2f6;
+            border-color: #afc1cf;
+            box-shadow: none;
+        }
+    }
+}
+
+
+/* disabled buttons */
+.btn.disabled, 
+.btn.disabled:hover, 
+.btn[disabled]:hover, 
+.btn.disabled:focus, 
+.btn[disabled]:focus, 
+.btn.disabled:active, 
+.btn[disabled]:active, 
+.btn.disabled.active, 
+.btn[disabled].active
+{
+	background-color: #F5F8FA;
+    border-color: #dde4e9;
+	color: #697782;
+	box-shadow: none;
+	cursor: default;
+}

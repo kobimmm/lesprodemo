@@ -1,0 +1,177 @@
+/* standart search */
+.b-search,
+.b-search-astyped{
+    display:flex;
+    width: 100%;
+}
+.b-search .b-search-input,
+.b-search .b-search-input{
+    height:40px;
+    width:100%;
+    padding-right:80px;
+    border-radius:0px;
+    border:solid 1px #dae2e8;
+    box-shadow:none;
+    outline:none;
+    box-sizing:border-box;
+    color:#404040;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+.b-search .nb-x,
+.b-search-astyped .nb-x{
+    content:"";
+    display:block;
+    z-index: 2;
+    border: none;
+    box-sizing:border-box;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' width='20' height='20' fill='%2393a4aa' stroke='none'%3E%3Cpath d='M11.4 10l4.7-4.7c0.4-0.4 0.4-1 0-1.4s-1-0.4-1.4 0l-4.7 4.7-4.7-4.8c-0.4-0.4-1-0.4-1.4 0s-0.4 1 0 1.4l4.7 4.8-4.7 4.7c-0.4 0.4-0.4 1 0 1.4s1 0.4 1.4 0l4.7-4.7 4.7 4.7c0.4 0.4 1 0.4 1.4 0s0.4-1 0-1.4l-4.7-4.7z'%3E%3C/path%3E%3C/svg%3E") no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0px;
+    
+    opacity:.8;
+}
+.b-search .nb-x{
+    right: 40px;
+    visibility: hidden;
+}
+.b-search-astyped .nb-x{
+    right: 4px;
+}
+.b-search .nb-x:hover,
+.b-search-astyped .nb-x:hover{
+    opacity:1;
+}
+.b-search .nb-magnifier:before,
+.b-search-astyped .nb-magnifier:before{
+    content:"";
+    display:block;
+    z-index: 2;
+    border: none;
+    box-sizing:border-box;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' width='20' height='20' fill='%2393a4aa' stroke='none'%3E%3Cpath d='M19.5,18.109l-5.373-5.373A7.938,7.938,0,0,0,7.861-.1,8.117,8.117,0,0,0,0,7.96a7.984,7.984,0,0,0,7.96,7.96,7.842,7.842,0,0,0,4.876-1.692L18.209,19.6a.962.962,0,0,0,1.393,0A1.194,1.194,0,0,0,19.5,18.109ZM7.96,13.83a5.97,5.97,0,1,1,5.97-5.97A5.988,5.988,0,0,1,7.96,13.83Z'%3E%3C/path%3E%3C/svg%3E") no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 4px;
+    top: 0px;
+}
+.b-search .nb-magnifier:hover:before{
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' width='20' height='20' fill='%23ffffff' stroke='none'%3E%3Cpath d='M19.5,18.109l-5.373-5.373A7.938,7.938,0,0,0,7.861-.1,8.117,8.117,0,0,0,0,7.96a7.984,7.984,0,0,0,7.96,7.96,7.842,7.842,0,0,0,4.876-1.692L18.209,19.6a.962.962,0,0,0,1.393,0A1.194,1.194,0,0,0,19.5,18.109ZM7.96,13.83a5.97,5.97,0,1,1,5.97-5.97A5.988,5.988,0,0,1,7.96,13.83Z'%3E%3C/path%3E%3C/svg%3E") no-repeat;
+    background-position: center;
+    background-color:#007cbe;
+    cursor:pointer
+}
+.b-search .b-search-input:hover,
+.b-search .b-search-input:focus{
+    border: solid 1px #007cbe;
+}
+
+.b-search input[value=""]:valid + span .nb-x{
+    visibility:visible;
+}
+
+/* hidding from IE the integrated X icon */
+.b-search-input::-ms-clear {
+    display:none;
+}
+/*==============================================*/
+
+/* search as typed */
+
+.b-search-astyped .b-search-input{
+    color:#404040;
+    height:40px;
+    width: calc( 100% - 5px);
+    min-width:320px;
+    padding-right:40px;
+    padding-left:0px;
+    border-radius:0px;
+    box-shadow:none;
+    outline:none;
+    border:none;
+    box-sizing:border-box;
+    border-bottom: solid 1px #9b9ea0;
+}
+.b-search-astyped .nb-x{
+    visibility:hidden;
+}
+
+/*
+.b-search-astyped .nb-x:active:before{
+    position:absolute;
+    z-index:10;
+    right:12px;
+    top:12px;
+}
+*/
+.b-search-astyped .nb-x:active,
+.b-search-astyped .nb-magnifier:active{
+    box-shadow:none;
+}
+
+.b-search-astyped input[value=""]:valid + span .nb-x{
+    visibility:visible;
+}
+.b-search-astyped input[value=""]:valid + span .nb-magnifier{
+    visibility:hidden;
+}
+
+/* disabled */
+.b-search .b-search-input:disabled {
+    border: solid 1px #e0e7ed;
+    background-color:#fff;
+    color:#9b9ea0;
+    cursor:default;
+}
+.b-search .nb-magnifier.nb-disabled:before,
+.b-search-astyped .nb-magnifier.nb-disabled:before{
+    width:40px;
+    height:40px;
+    display: inline-block;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' width='20' height='20' fill='%23c3c5c7' stroke='none'%3E%3Cpath d='M19.5,18.109l-5.373-5.373A7.938,7.938,0,0,0,7.861-.1,8.117,8.117,0,0,0,0,7.96a7.984,7.984,0,0,0,7.96,7.96,7.842,7.842,0,0,0,4.876-1.692L18.209,19.6a.962.962,0,0,0,1.393,0A1.194,1.194,0,0,0,19.5,18.109ZM7.96,13.83a5.97,5.97,0,1,1,5.97-5.97A5.988,5.988,0,0,1,7.96,13.83Z'%3E%3C/path%3E%3C/svg%3E") no-repeat;
+    background-position: center;
+    cursor:default;
+    
+}
+.b-search-astyped .b-search-input:disabled{
+    border-bottom: solid 1px #e0e7ed;
+    background-color:#fff;
+    color:#9b9ea0;
+    cursor:default;
+}
+/* view mode */
+.search-view{
+    font-family: 'Lato', sans-serif;
+    font-size:14px;
+}
+/* error */
+.input-group.b-search .b-search-input.error,
+.input-group.b-search-astyped .b-search-input.error{
+     border-color:#d82132;
+}
+
+/*========== styling the autocomplete typehead dropdown ============*/
+/*
+.b-search .typeahead.dropdown-menu{
+    border-radius: 0;
+    margin-top:-3px;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    width:320px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+.typeahead.dropdown-menu .dropdown-item{
+    height:40px;
+    line-height: 32px;
+    padding: 3px 12px;
+}
+.dropdown-menu>.active>a, 
+.dropdown-menu>.active>a:hover, 
+.dropdown-menu>.active>a:focus{
+    background-color: #007cbe;
+    
+}*/
